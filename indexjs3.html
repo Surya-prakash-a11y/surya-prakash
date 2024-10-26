@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+      
+        .calculater{
+           background-color: aqua;
+            border: 1px solid aqua;
+            width: 300px;
+        text-align: center;
+        padding: 40px 0;
+        margin-left: 30%;
+        margin-top: 5%;
+        border-radius: 50px;
+    }
+    .calculater input
+{
+    width: 270px;
+    height: 40px;
+    padding:0 5px;
+    border-radius: 10px;
+    border: 1px solid red;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+
+}   
+button{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50px;
+margin: 8px;
+cursor: pointer;
+border-color: white;
+}    
+button:hover{
+background-color: grey;
+}
+ 
+.orange{
+    background-color: darkturquoise;
+
+}
+.red{
+    background-color: red;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculater">
+        <input type="text" id="result" disabled/>
+        <button class="red" onclick="clearresult()">Ac</button>
+        <button class="red" onclick="clearresul('')">C</button>
+        <button class="orange" onclick="getresult('%')">%</button>
+        <button class="orange" onclick="getresult('/')">/</button>
+       <button onclick="getresult('1')">1</button>
+       <button onclick="getresult('2')">2</button>
+       <button onclick="getresult('3')">3</button>
+       <button class="orange" onclick="getresult('*')">*</button>      
+       <button onclick="getresult('4')">4</button>
+       <button onclick="getresult('5')">5</button>
+       <button onclick="getresult('6')">6</button>
+       <button class="orange" onclick="getresult('+')">+</button>
+       <button onclick="getresult('7')">7</button>
+       <button onclick="getresult('8')">8</button>
+       <button onclick="getresult('9')">9</button>
+       <button class="orange" onclick="getresult('-')">-</button>
+       <button onclick="getresult('00')">00</button>
+       <button onclick="getresult('0')">0</button>
+       <button onclick="getresult('.')">.</button>
+    <button class="orange" onclick="getresult('=')">=</button>
+   
+   
+    </div>
+    <script>
+      let result=document.getElementById('result');
+
+      function getresult(value){
+       if(value ==='='){
+       try {
+            result.value=eval(result.value);
+        } 
+      catch (error) {
+        result.value="error"
+
+        }
+    }
+
+        else {
+{
+    result.value += value;
+}
+  }
+ 
+     
+ 
+  
+    
+      }
+function clearresult(){
+     result.value="";
+}
+         
+    </script>
+</body>
+</html>
